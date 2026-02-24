@@ -1,6 +1,6 @@
 
-main: NFL_score.c
-	gcc NFL_score.c -o main
+assignment1: NFL_score.c
+	gcc NFL_score.c -o assignment1
 
 clean:
-	rm -rf main
+	rm -rf assignment1

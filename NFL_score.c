@@ -9,6 +9,9 @@ int main(){
     scanf("%d",&score);
     if(score ==1 || score ==0){
 
+    }else if(score<0){
+        printf("That is not a valid value");
+        
     }else{
         print_possible_scores(score);
     }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 void print_possible_scores(int n);
-// void all_possibilities(int score, int n1, int n2, int n3, int n4, int n5, int which_n);
+
 
 int main(){
     int score = 0;

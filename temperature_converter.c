@@ -9,17 +9,17 @@ void categorize_temperature(float celsius);
 
 int main(){
     int pass = 1;
-    while(pass ==1){
-        prinf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
-        char og;
-        scanf("%c",&og);
-        prinf("\n Enter the temperature: ");
-        float temp;
-        scanf("%f",&temp);
-        prinf("\n Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin");
-        char change;
-        scanf("%c",&change);
-        float later_weather = 0;
+    char og;
+    float temp;
+    char change;
+    printf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
+    scanf("%c",&og);
+    printf("Enter the temperature: ");
+    scanf("%f",&temp);
+    printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin ");
+    scanf(" %c",&change);
+    float later_weather = 0;
+    //while(pass ==1){
         if(tolower(og)=='c'){
             later_weather=temp;
             if(celsius_to_kelvin(temp)<0){
@@ -34,7 +34,6 @@ int main(){
                 }else{
                     printf("Can't convert to that unit");
                 }
-
             }
         }else if(tolower(og)=='f'){
             if (tolower(change)=='k'){
@@ -76,10 +75,12 @@ int main(){
         }else{
             printf("Not a valid starting unit");
         }
+        
 
-
-    }
-    
+    //}
+    printf("Converted temperature: %f \n",temp);
+        
+    categorize_temperature(later_weather);
 
 
     return 0;
@@ -106,7 +107,7 @@ void categorize_temperature(float celsius){
     }else if(celsius<=25){
         printf("Its nice weather");
     }else if(celsius<=35){
-        prinf("Drink lots of water");
+        printf("Drink lots of water");
     }else{
         printf("Stay indoors");
     }

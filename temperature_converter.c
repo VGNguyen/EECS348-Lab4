@@ -16,10 +16,10 @@ int main(){
     scanf("%c",&og);
     printf("Enter the temperature: ");
     scanf("%f",&temp);
-    printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin ");
+    printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
     scanf(" %c",&change);
     float later_weather = 0;
-    //while(pass ==1){
+    while(pass ==1){
         if(tolower(og)=='c'){
             later_weather=temp;
             if(celsius_to_kelvin(temp)<0){
@@ -75,9 +75,15 @@ int main(){
         }else{
             printf("Not a valid starting unit");
         }
-        
+        printf("\n");
+        printf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
+        scanf(" %c",&og);
+        printf("Enter the temperature: ");
+        scanf(" %f",&temp);
+        printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin:");
+        scanf(" %c",&change);
 
-    //}
+    }
     printf("Converted temperature: %f \n",temp);
         
     categorize_temperature(later_weather);
@@ -93,10 +99,10 @@ float fahrenheit_to_celsius (float fahrenheit){
     return (fahrenheit-32)*5/9;
 }
 float celsius_to_kelvin (float celsius){
-    return celsius+273.15;
+    return celsius-273.15;
 }
 float kelvin_to_celsius (float kelvin){
-    return kelvin-273.15;
+    return kelvin+273.15;
 }
 
 void categorize_temperature(float celsius){
@@ -109,6 +115,6 @@ void categorize_temperature(float celsius){
     }else if(celsius<=35){
         printf("Drink lots of water");
     }else{
-        printf("Stay indoors");
+        printf("Stay indoors with some air conditioning");
     }
 }

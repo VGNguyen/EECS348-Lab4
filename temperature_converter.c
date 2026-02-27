@@ -13,9 +13,9 @@ int main(){
     float temp;
     char change;
     printf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
-    scanf("%c",&og);
+    scanf(" %c",&og);
     printf("Enter the temperature: ");
-    scanf("%f",&temp);
+    scanf(" %f",&temp);
     printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
     scanf(" %c",&change);
     float later_weather = 0;
@@ -75,13 +75,16 @@ int main(){
         }else{
             printf("Not a valid starting unit");
         }
-        printf("\n");
-        printf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
-        scanf(" %c",&og);
-        printf("Enter the temperature: ");
-        scanf(" %f",&temp);
-        printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin:");
-        scanf(" %c",&change);
+        if(pass==1){
+            printf("\n");
+            printf("Enter what unit for original temperature, 'F'ahrenheit,'C'elcius, or 'K'elvin: ");
+            scanf(" %c",&og);
+            printf("Enter the temperature: ");
+            scanf(" %f",&temp);
+            printf("Enter which temperature to convert to 'F'ahrenheit,'C'elcius, or 'K'elvin:");
+            scanf(" %c",&change);
+        }
+        
 
     }
     printf("Converted temperature: %f \n",temp);
